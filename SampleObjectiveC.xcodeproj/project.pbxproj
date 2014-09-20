@@ -17,6 +17,7 @@
 		B599FCDB1656F5020092AFFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B599FCDA1656F5020092AFFD /* AppDelegate.m */; };
 		B599FCDE1656F5020092AFFD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B599FCDC1656F5020092AFFD /* MainMenu.xib */; };
 		B599FCE91656F6D30092AFFD /* Sample.m in Sources */ = {isa = PBXBuildFile; fileRef = B599FCE81656F6D30092AFFD /* Sample.m */; };
+		E8DA95CA19CE1A2E009D5876 /* LaserRemoteControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DA95C919CE1A2E009D5876 /* LaserRemoteControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,8 @@
 		B599FCDD1656F5020092AFFD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B599FCE71656F6D30092AFFD /* Sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample.h; sourceTree = "<group>"; };
 		B599FCE81656F6D30092AFFD /* Sample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sample.m; sourceTree = "<group>"; };
+		E8DA95C819CE1A2E009D5876 /* LaserRemoteControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserRemoteControl.h; sourceTree = "<group>"; };
+		E8DA95C919CE1A2E009D5876 /* LaserRemoteControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaserRemoteControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 		B599FCB81656F5020092AFFD = {
 			isa = PBXGroup;
 			children = (
+				E8DA95C719CE19FD009D5876 /* LaserRemoteControl */,
 				B599FCCD1656F5020092AFFD /* Sample */,
 				B599FCC61656F5020092AFFD /* Frameworks */,
 				B599FCC41656F5020092AFFD /* Products */,
@@ -143,6 +147,16 @@
 			name = "Leap Files";
 			sourceTree = "<group>";
 		};
+		E8DA95C719CE19FD009D5876 /* LaserRemoteControl */ = {
+			isa = PBXGroup;
+			children = (
+				E8DA95C819CE1A2E009D5876 /* LaserRemoteControl.h */,
+				E8DA95C919CE1A2E009D5876 /* LaserRemoteControl.m */,
+			);
+			name = LaserRemoteControl;
+			path = ObjectiveC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8DA95CA19CE1A2E009D5876 /* LaserRemoteControl.m in Sources */,
 				B599FCD41656F5020092AFFD /* main.m in Sources */,
 				B599FCDB1656F5020092AFFD /* AppDelegate.m in Sources */,
 				B599FCE91656F6D30092AFFD /* Sample.m in Sources */,

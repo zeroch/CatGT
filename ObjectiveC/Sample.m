@@ -7,7 +7,7 @@
 \******************************************************************************/
 
 #import "Sample.h"
-
+#import "LaserRemoteControl.h"
 @implementation Sample
 {
     LeapController *controller;
@@ -94,6 +94,9 @@
          // [[frame fingers] count], [[frame tools] count], [[frame gestures:nil] count]);
 
     // Get hands
+    
+    BOOL LeftOrRight;
+    
     for (LeapHand *hand in frame.hands) {
         NSString *handType = hand.isLeft ? @"Left hand" : @"Right hand";
       //  NSLog(@"  %@, id: %i, palm position: %@",
@@ -102,23 +105,8 @@
         // Get the hand's normal vector and direction
         const LeapVector *normal = [hand palmNormal];
         const LeapVector *direction = [hand direction];
-        
-        if (direction.x > 0) {
-            NSLog(@"Swipe Right");
-        }
-        
-        else{
-            NSLog(@"Swipe Left");
-        }
-        
-        if (direction.y > 0) {
-            NSLog(@"Swipe Up");
-        }
-        
-        else{
-            NSLog(@"Swipe Down");
-        }
-        
+
+        LeftOrRight = hand.isLeft;
         
 
         // Calculate the hand's pitch, roll, and yaw angles
@@ -145,8 +133,8 @@
     }
 
     for (LeapTool *tool in frame.tools) {
-    //    NSLog(@"  Tool, id: %i, position: %@, direction: %@",
-         //     tool.id, tool.tipPosition, tool.direction);
+        NSLog(@"  Tool, id: %i, position: %@, direction: %@",
+              tool.id, tool.tipPosition, tool.direction);
     }
 
     NSArray *gestures = [frame gestures:nil];
@@ -169,6 +157,18 @@
                     LeapCircleGesture *previousUpdate = (LeapCircleGesture *)[[aController frame:1] gesture:gesture.id];
                     sweptAngle = (circleGesture.progress - previousUpdate.progress) * 2 * LEAP_PI;
                 }
+                
+                
+                if ([clockwiseness isEqualToString:@"clockwise"]) {
+               //     NSLog(@"turn on");
+                }
+                
+                else{
+                   // NSLog(@"turn off");
+                }
+                
+                
+                
 
            //     NSLog(@"  Circle id: %d, %@, progress: %f, radius %f, angle: %f degrees %@",
              //         circleGesture.id, [Sample stringForState:gesture.state],
@@ -182,24 +182,32 @@
                 //      swipeGesture.id, [Sample stringForState:swipeGesture.state],
                   //    swipeGesture.position, swipeGesture.direction, swipeGesture.speed);
                
-                /*
                 
-                if (swipeGesture.direction.x > 0) {
-                    NSLog(@"Swipe Right");
+                
+                if (LeftOrRight){
+                    if (swipeGesture.direction.x > 0) {
+                        
+                        [[LaserRemoteControl sharedManager]updateSwipeGesture:LaserGestureDirectionRight];
+                    }
+                    
+                    else{
+                        [[LaserRemoteControl sharedManager]updateSwipeGesture:LaserGestureDirectionLeft];
+                    }
                 }
                 
                 else{
-                    NSLog(@"Swipe Left");
+
+                    if (swipeGesture.direction.y > 0) {
+                        [[LaserRemoteControl sharedManager]updateSwipeGesture:LaserGestureDirectionUP];                    }
+                    
+                    else{
+                        [[LaserRemoteControl sharedManager]updateSwipeGesture:LaserGestureDirectionDown];
+                    }
+                    
+                    
                 }
                 
-                if (swipeGesture.direction.y > 0) {
-                    NSLog(@"Swipe Up");
-                }
-                
-                else{
-                    NSLog(@"Swipe Down");
-                }
-                */
+
                 
                 
                 break;
@@ -226,6 +234,7 @@
 
     if (([[frame hands] count] > 0) || [[frame gestures:nil] count] > 0) {
       //  NSLog(@" ");
+        
     }
 }
 
