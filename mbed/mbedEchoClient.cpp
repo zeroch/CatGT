@@ -45,11 +45,15 @@ int main()
     socket.send_all(echo, sizeof(echo)-1);
 
 
-    char buf[256];
-    int n = socket.receive(buf,258);
+    while(true){
 
-    buf[n] = '\0';
-    printf("%s\n", buf);
+        char buf[256];
+        int n = socket.receive(buf,258);
+        buf[n] = '\0';
+        printf("%s\n", buf);
+
+    }
+
 
     // close socket at end of send and receive
     socket.close();

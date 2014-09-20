@@ -62,15 +62,20 @@ int main()
            parse(demo, buf);
            index = demo["Value"].get<int>();
            printf("[DEBUG]: current Index is %d \n", index);
+
+           /***************
+
+
+            This place the stepper motor action. 
+
+
+           ****************/
+
+
        }else {
             printf("[DEBUG]: socket.receive %d\n", n);
        }
-       // clean buf
-//       buf[0] = '\0';
        wait(2);
-        // buf[n] = '\0';
-        // printf("%s\n", buf);
-        // wait(2);
         
 
     }
