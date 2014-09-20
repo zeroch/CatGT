@@ -27,9 +27,10 @@ while True:
     try:
         print  >> sys.stderr, 'connection from', client_address
         print >>sys.stderr, 'sending %s' % message
-        connection.sendall(message)
+        
 
-        if (len(messages)>0):
+        while (len(messages)>=0):
+            connection.sendall(message)
             message = messages.pop(0)
         else:
             print >> sys.stderr, 'no more messages'
