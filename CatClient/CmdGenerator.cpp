@@ -1,4 +1,7 @@
+#include "CmdGenerator.h"
 #include "json/json.h"
+
+
 
 /*
 char  json_sample [] = "{\"left\":1,\"right\":2,\"value\":3}";
@@ -21,3 +24,11 @@ std::cout << "Left Value: " << left << std::endl
 << "Actual Value: " << value << std::endl;
 std::cout << "Pretty Print: "
 << root.toStyledString() << std::endl;*/
+
+CmdGenerator::CmdGenerator(char firstcmd[]) {
+
+}
+
+void CmdGenerator::updateCmd(char cmd_string[]) {
+
+}
