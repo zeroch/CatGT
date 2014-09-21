@@ -6,7 +6,7 @@ from twisted.internet import reactor
 latestCommand = "none"
 
 class MultiEcho(Protocol):
-   def _init_(self, factory):
+   def __init__(self, factory):
        self.factory = factory
 
    def connectionMade(self):
@@ -17,24 +17,25 @@ class MultiEcho(Protocol):
 
    def connectionLost(self, reason):
        self.factory.echoers.remove(self)
-
    def update_data(self,data,echoers):
        global latestCommand
        global changed
        if data !=latestCommand:
            for echoer in echoers:
                echoer.transport.write(data)
+               echoer.transport.write(data)
+               print data
            latestCommand = data
 
 
 
 class MultiEchoFactory(Factory):
-   def _init_(self):
-       self.echoers = []
+   def __init__(self):
+       self.etchoers = []
 
    def buildProtocol(self, addr):
-       return MultiEcho(self)
+       return MultiEcho()
 
-reactor.listenTCP(4321, MultiEchoFactory())
+reactor.listenTCP(10000, MultiEchoFactory())
 reactor.run()
 
