@@ -3,13 +3,9 @@ CatGT
 
 This is project for the HackGt event.   Everyone likes cat. Go Jackets!!
 
-# Linode Account
 
-Username: catgt
-ask ze to get the password. 
-
-# Linode server ip
-198.74.55.55
+# Introduction. 
+CatGT is project that we connect cat's owner with cat through internet of things. 
 
 # Git control 
 
