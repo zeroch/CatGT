@@ -3,7 +3,6 @@ CatGT
 
 This is project for the HackGt event.
 
-
 # Introduction
  
 CatGT is project that we connect cat's owner with cat through internet of things. 
@@ -11,8 +10,10 @@ CatGT is project that we connect cat's owner with cat through internet of things
 # Team Role
 
 **Ze Chen and Zhen Liu** are working on mbed microcontroller 
-**Ivan Jimenez and Yating Wang ** are on  server side. use **server branch**. 
-**Zeheng Chen(@otherworldman)**, Mac Development
+
+**Ivan Jimenez and Yating Wang ** are working on Python Server
+
+**Zeheng Chen(@otherworldman)**, Mac Development,Leap Motion and Python Server 
 
 # Component 
 
@@ -23,9 +24,13 @@ CatGT is project that we connect cat's owner with cat through internet of things
 
 # Code Folder Structure
 
-\mbed Code for MicroController
-\server Code for Python Server
-\Mac Code for Mac and LeapMotion
+\mbed Code for MicroController (c++)
 
+\server Code for Server (python)
 
+\Mac Code for Mac Desktop /LeapMotion (ObjC)
+
+# Future Contact
+
+Contact @otherworldman
 
