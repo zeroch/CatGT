@@ -1,28 +1,31 @@
 CatGT
 =====
 
-This is project for the HackGt event.   Everyone likes cat. Go Jackets!!
+This is project for the HackGt event.
 
 
-# Introduction. 
+# Introduction
+ 
 CatGT is project that we connect cat's owner with cat through internet of things. 
 
-# Git control 
+# Team Role
 
-**Ze and Zhen** are working on the microcontroller part, use **mbed branch**. 
+**Ze Chen and Zhen Liu** are working on mbed microcontroller 
+**Ivan Jimenez and Yating Wang ** are on  server side. use **server branch**. 
+**Zeheng Chen(@otherworldman)**, Mac Development
 
-**Yating and Ivan** on the server side. use **server branch**. and **Zeheng**, maybe use **server** too. 
+# Component 
 
-Because mbed have to build from cloud, and server code use build by local. so I don't want to mess up the code.  
+1. Laser Point with servo motor. 
+2. Mbed Microcontroler TCP/IP to web server
+3. Web Server relay information from Mac Desktop to Mbed Microcontroller
+4. Mac + LeapMotion, detect gesture and send commands to Web server
 
-# Goal. 
+# Code Folder Structure
 
-We have four part need to achieve. 
+\mbed Code for MicroController
+\server Code for Python Server
+\Mac Code for Mac and LeapMotion
 
-1. stepper motor with lazer. 
-2. remote control the stepper motor. 
-3. camera can conbine with above system .
-4. leep motion controller with above. 
 
-# Happy Coding. 
 
