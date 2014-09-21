@@ -64,7 +64,7 @@ static dispatch_queue_t serialQueue;
 - (void)initNetworkCommunication {
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
-    CFStreamCreatePairWithSocketToHost(NULL, (CFStringRef)@"127.0.0.1",4321, &readStream, &writeStream);
+    CFStreamCreatePairWithSocketToHost(NULL, (CFStringRef)@"198.74.55.55",4321, &readStream, &writeStream);
     //bridge Core Foundation's socket stream to IOS by doing a bridge casting.
     self.inputStream = (__bridge NSInputStream *)readStream;
     self.outputStream = (__bridge NSOutputStream *)writeStream;
