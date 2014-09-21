@@ -161,10 +161,12 @@
                 
                 if ([clockwiseness isEqualToString:@"clockwise"]) {
                //     NSLog(@"turn on");
+                    [[LaserRemoteControl sharedManager]updateOnAnOffLaser:true];
                 }
                 
                 else{
                    // NSLog(@"turn off");
+                    [[LaserRemoteControl sharedManager]updateOnAnOffLaser:false];
                 }
                 
                 
@@ -184,7 +186,7 @@
                
                 
                 
-                if (LeftOrRight){
+                if (!LeftOrRight){
                     if (swipeGesture.direction.x > 0) {
                         
                         [[LaserRemoteControl sharedManager]updateSwipeGesture:LaserGestureDirectionRight];

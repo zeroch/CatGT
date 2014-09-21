@@ -18,14 +18,20 @@ typedef NS_ENUM(NSInteger, LaserGestureDirection){
 };
 
 
+extern NSString *const directionUp;
+extern NSString *const directionDown;
+extern NSString *const directionLeft;
+extern NSString *const directionRight;
+extern NSString *const powerOn;
+extern NSString *const powerOff;
 
-@interface LaserRemoteControl : NSObject
+
+@interface LaserRemoteControl : NSObject <NSStreamDelegate>
 
 
 +(id)sharedManager;
 
 -(void)updateSwipeGesture:(LaserGestureDirection)direction;
 -(void)updateOnAnOffLaser:(BOOL)toggle;
-
 
 @end
