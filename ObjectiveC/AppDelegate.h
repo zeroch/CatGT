@@ -9,10 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 @class Sample;
-
+@class LeapLaser;
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (nonatomic, strong, readwrite)IBOutlet NSWindow *window;
-@property (nonatomic, strong, readwrite)Sample *sample;
+@property (nonatomic, strong, readwrite)LeapLaser *LeapLaserController;
 
 @end

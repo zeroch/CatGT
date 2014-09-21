@@ -6,19 +6,21 @@
 * between Leap Motion and you, your company or other organization.             *
 \******************************************************************************/
 
+//Modified by Zeheng Chen
+
 #import "AppDelegate.h"
-#import "Sample.h"
+#import "LeapLaser.h"
 
 @implementation AppDelegate
 
 // Xcode 4.2 warns if we do not explicitly synthesize
 @synthesize window = _window;
-@synthesize sample = _sample; // must retain for notifications
+@synthesize LeapLaserController = _LeapLaserController; // must retain for notifications
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    _sample = [[Sample alloc]init];
-    [_sample run];
+    _LeapLaserController = [[LeapLaser alloc]init];
+    [_LeapLaserController run];
 }
 
 @end
